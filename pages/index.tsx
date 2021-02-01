@@ -4,20 +4,43 @@ import Button from '~/components/Button'
 import Navbar from '../comps/Navbar'
 import Footer from '../comps/Footer'
 import TasksList from './tasks/index'
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <Navbar />
-    <h1>Hello Next.js 👋</h1>
-    <TasksList />
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-      <Button />
-    </p>
-    <Footer />
-  </Layout>
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import { reducer } from '../reducer'
+import { ConnectedTaskList } from '../components/TasksList'
+import { WrappedWeather, WithWeatherProps, Weather } from '../components/Weather'
+import GetFetch from '../components/getFetch'
 
+const store = createStore(reducer)
+const IndexPage = () => (
+  <Provider store={store}>
+    <Layout title="Home | Next.js + TypeScript Example">
+      <Navbar />
+      <WrappedWeather theme="yellow"/>
+      <WithWeatherProps>
+        {
+          (props) => {
+            return(
+              <Weather {...props} theme="yellow"/>
+            )
+
+          }
+        }
+      </WithWeatherProps>
+      <ConnectedTaskList />
+      <h1>Hello Next.js 👋</h1>
+      <TasksList />
+      <p>
+        <Link href="/about">
+          <a>About</a>
+        </Link>
+        <Button />
+
+      </p>
+      <GetFetch />
+      <Footer />
+    </Layout>
+  </Provider>
 )
 
 export default IndexPage
