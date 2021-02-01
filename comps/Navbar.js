@@ -5,8 +5,8 @@ const Navbar = () => {
   return ( 
     <div className="logo">
       <h1>nin jas list</h1>
-      <Link href="/"><a>Home</a></Link>
-      <Link href="/about"><a>About</a></Link>
+      <Link href="/"><a>Day1</a></Link>
+      <Link href="/day2"><a>Day2</a></Link>
       <Link href="/ninjas"><a>Ninja Listing</a></Link>
     </div>
    );

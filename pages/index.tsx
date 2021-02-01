@@ -14,7 +14,7 @@ import GetFetch from '../components/getFetch'
 const store = createStore(reducer)
 const IndexPage = () => (
   <Provider store={store}>
-    <Layout title="Home | Next.js + TypeScript Example">
+    <Layout title="day1 | Next.js + TypeScript Example">
       <Navbar />
       <WrappedWeather theme="yellow"/>
       <WithWeatherProps>
@@ -28,11 +28,11 @@ const IndexPage = () => (
         }
       </WithWeatherProps>
       <ConnectedTaskList />
-      <h1>Hello Next.js 👋</h1>
+      <h1>day1 Next.js 👋</h1>
       <TasksList />
       <p>
-        <Link href="/about">
-          <a>About</a>
+        <Link href="/day2">
+          <a>Day2</a>
         </Link>
         <Button />
 
