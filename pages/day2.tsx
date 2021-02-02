@@ -36,7 +36,7 @@ const Day2: NextPage<Props, InitialProps> = () => {
   }
   return (
 
-    <Layout title="day1 | Next.js + TypeScript Example">
+    <Layout title="day2 | Next.jsjkkjk+ TypeScript Example">
 
       <div>
         <h3> this is day 2</h3>
